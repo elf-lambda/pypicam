@@ -78,14 +78,14 @@ button {
     font-size: 14px;
     border: none;
     border-radius: 6px;
-    background-color: #007bff;
+    background-color: #4a627c;
     color: white;
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #576b80;
 }
 
 input[type="number"] {
@@ -182,7 +182,7 @@ br {
 .download-btn {
     padding: 6px 10px;
     font-size: 0.85rem;
-    background-color: #007bff;
+    background-color: #616d7a;
     border-radius: 6px;
     color: white;
     text-decoration: none;
@@ -190,7 +190,7 @@ br {
 }
 
 .download-btn:hover {
-    background-color: #0056b3;
+    background-color: #6e87a0
 }
 
 /* Empty & error messages */
