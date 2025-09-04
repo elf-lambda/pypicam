@@ -15,6 +15,8 @@ recorder_config = Config(
 )
 recorder = Recorder(recorder_config)
 
+camera = camera.Camera()
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
