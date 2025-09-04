@@ -1,0 +1,206 @@
+/* Reset default margins */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #181a1b;
+    color: #f5f5f5;
+}
+
+/* Header styling */
+header {
+    background-color: #292929;
+    padding: 0.5rem;
+}
+
+nav a {
+    padding: 5px 0px;
+    border-bottom: 2px solid #00ff80;
+    /* Invisible border */
+    transition: border-color 0.3s ease;
+}
+
+nav a:hover {
+    /* padding: 5px; */
+    /* background-color: #00ffbf; */
+    border-bottom: 2px solid #ff6600;
+    /* Shows underline on hover */
+
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+img {
+    max-height: 80vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Main layout - side by side */
+.container {
+    display: flex;
+    /* max-height: 90vh; */
+}
+
+main {
+    /* margin: auto; */
+
+    width: 70%;
+    padding: 1rem;
+    /* max-height: 100vh; */
+}
+
+aside {
+    width: 30%;
+    background-color: #1e2021;
+    padding: 1rem;
+    /* height: 50; */
+    min-height: 100vh;
+}
+
+.serverUptime {
+    /* display: flex; */
+    /* align-items: flex-start; */
+}
+
+button {
+    padding: 5px 5px;
+    margin: 5px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+input[type="number"] {
+    padding: 3px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-right: 8px;
+    width: 60px;
+}
+
+br {
+    border: 1px solid white;
+}
+
+/* Downloads page container */
+.downloads-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Breadcrumb navigation */
+.breadcrumb {
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: #00ff80;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: #ff6600;
+    text-decoration: underline;
+}
+
+.breadcrumb-item {
+    color: #ccc;
+}
+
+/* File grid layout */
+.files-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+/* File/folder card */
+.file-item {
+    background-color: #1e2021;
+    /* border-radius: 8px; */
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: background-color 0.2s ease;
+}
+
+.file-item:hover {
+    background-color: #2a2c2e;
+    cursor: pointer;
+}
+
+/* Folder style */
+.file-item.folder {
+    justify-content: flex-start;
+}
+
+.file-item .file-icon {
+    font-size: 1.8rem;
+}
+
+/* File details (name + size) */
+.file-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.file-name {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    word-break: break-word;
+}
+
+.file-size {
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+/* Download button */
+.download-btn {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    background-color: #007bff;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.download-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Empty & error messages */
+.empty,
+.error {
+    text-align: center;
+    padding: 1rem;
+    color: #ccc;
+}
+
+.error {
+    color: #ff6600;
+}
