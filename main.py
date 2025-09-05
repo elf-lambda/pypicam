@@ -15,22 +15,37 @@ recorder_config = Config(
 )
 recorder = Recorder(recorder_config)
 
-camera = camera.Camera()
+# camera = camera.Camera()
+
+app = FastAPI()
 
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    # Startup
+@app.on_event("startup")
+async def startup_event():
     camera.start_camera()
     print("Server starting up...")
-    yield
-    # Shutdown
+
+
+@app.on_event("shutdown")
+async def shutdown_event():
     print("Server shutting down...")
-    recorder.cleanup()  # Stop recording and cleanup
+    recorder.cleanup()
     camera.stop_camera()
 
 
-app = FastAPI(lifespan=lifespan)
+# @asynccontextmanager
+# async def lifespan(app: FastAPI):
+#     # Startup
+#     # camera.start_camera()
+#     print("Server starting up...")
+#     yield
+#     # Shutdown
+#     print("Server shutting down...")
+#     recorder.cleanup()  # Stop recording and cleanup
+#     # camera.stop_camera()
+
+
+# app = FastAPI(lifespan=lifespan)
 # camera = camera.Camera()
 start_time = time.time() * 1000  # millis
 
