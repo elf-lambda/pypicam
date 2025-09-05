@@ -22,9 +22,6 @@ class Recorder:
 
     def get_ffmpeg_command(self):
         """Generate FFmpeg command based on config"""
-        today = datetime.now().strftime("%Y%m%d")
-        output_dir = Path(self.config.recording_clips_dir) / today
-
         command = [
             "ffmpeg",
             "-nostdin",
@@ -38,6 +35,7 @@ class Recorder:
             self.config.camera_url,
             "-c:v",
             "h264_v4l2m2m",
+            # "-crf", "0",
             "-pix_fmt",
             "yuv420p",
             "-b:v",
@@ -47,14 +45,15 @@ class Recorder:
             "-reset_timestamps",
             "1",
             "-segment_time",
-            "1800",  # 30 minutes
+            "1800",
             "-segment_format",
             "mkv",
             "-segment_atclocktime",
             "1",
             "-strftime",
             "1",
-            str(output_dir / "%Y%m%dT%H%M%S.mkv"),
+            self.config.recording_clips_dir + "/%Y%m%d/%Y%m%dT%H%M%S.mkv",
+            # self.config.recording_clips_dir + "/%Y%m%dT%H%M%S.mkv",
         ]
         return command
 
@@ -223,6 +222,6 @@ class Recorder:
 
 
 class Config:
-    def __init__(self, camera_url="/dev/video0", recording_clips_dir="./clips"):
+    def __init__(self, camera_url="/dev/video99", recording_clips_dir="./clips"):
         self.camera_url = camera_url
         self.recording_clips_dir = recording_clips_dir
